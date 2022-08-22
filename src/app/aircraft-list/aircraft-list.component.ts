@@ -1,4 +1,3 @@
-import { HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Aircraft } from '../aircraft.model';
@@ -16,22 +15,22 @@ export class AircraftListComponent implements OnInit {
 
     constructor(
         private aircraftService: AircraftService,
-        private router: Router,
-        private route: ActivatedRoute
     ) {}
 
     ngOnInit(): void {
         this.aircraftService.getAircrafts()
-            .subscribe(aCrafts => {
-                this.airCrafts = aCrafts
-            }, err => {
-                console.log('err: ', err);
-                this.error = err;
+            .subscribe({
+                next: aCrafts => {
+                    this.airCrafts = aCrafts
+                },
+                error: err => {
+                    console.log('err: ', err);
+                    this.error = err;
+                }
             });
     }
 
     onClick(aircraft: Aircraft) {
-        // this.router.navigate(['dilbox'], { relativeTo: this.route });
         alert(`
         FOS ID: ${aircraft.fos_id}
         Registration: ${aircraft.registration}
