@@ -1,0 +1,15 @@
+.header {
+    border: 1px solid black;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.body {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.error {
+    border: 1px solid red;
+    background-color: pink;
+}

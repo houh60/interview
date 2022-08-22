@@ -1,0 +1,22 @@
+<br>
+<div class="container">
+    <div class="col-xs-12" *ngIf="error.length === 0">
+        <div class="row">
+            <span class="header col-xs-12">Aircraft List</span>
+            <span class="col-xs-4 header">FOS ID</span>
+            <span class="col-xs-4 header">Registration</span>
+            <span class="col-xs-4 header">Fleet Type</span>
+        </div>
+        <div class="row" *ngFor="let aircraft of airCrafts">
+            <span class="col-xs-4 body">{{aircraft.fos_id}}</span>
+            <span class="col-xs-4 body">{{aircraft.registration}}</span>
+            <span class="col-xs-4 body"><a (click)="onClick(aircraft)">{{aircraft.fleet_type}}</a></span>
+        </div>
+    </div>
+    <div *ngIf="error.length !== 0" class="error">
+        <p>Error Name: {{error.name}}</p>
+        <p>Error Status: {{error.status}}</p>
+        <p>Error Text: {{error.statusText}}</p>
+    </div>
+
+</div>
