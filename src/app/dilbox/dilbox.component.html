@@ -8,7 +8,7 @@
     <div *ngIf="error" class="error">
         <p><span class="name">Error Name:</span> {{error.name}}</p>
         <p><span class="name">Error Status:</span> {{error.status}}</p>
-        <p><span class="name">Error Text:</span> {{error.statusText}}</p>
+        <p><span class="name">Error Message:</span> {{error.statusText}}</p>
     </div>
     <div class="alert-box-actions">
         <button class="btn" [ngClass]="error ? 'btn-danger' : 'btn-primary'" (click)="onClose()">Close</button>
