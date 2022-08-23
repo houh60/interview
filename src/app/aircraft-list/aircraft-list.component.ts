@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Aircraft } from '../aircraft.model';
 import { AircraftService } from '../aircraft.service';
 
@@ -12,9 +12,11 @@ export class AircraftListComponent implements OnInit {
 
     airCrafts: Aircraft[] = [];
     error: any = '';
+    show = false;
 
     constructor(
         private aircraftService: AircraftService,
+        private router: Router
     ) {}
 
     ngOnInit(): void {
@@ -31,11 +33,11 @@ export class AircraftListComponent implements OnInit {
     }
 
     onClick(aircraft: Aircraft) {
-        alert(`
-        FOS ID: ${aircraft.fos_id}
-        Registration: ${aircraft.registration}
-        Type: ${aircraft.fleet_type}`
-        );
+        this.show = true;
+        this.router.navigate(['/dilbox'], { queryParams: aircraft });
+    }
 
+    onClose(event: any) {
+        this.show = event;
     }
 }

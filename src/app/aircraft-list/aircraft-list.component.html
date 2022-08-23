@@ -13,9 +13,6 @@
             <span class="col-xs-4 body"><a (click)="onClick(aircraft)">{{aircraft.fleet_type}}</a></span>
         </div>
     </div>
-    <div *ngIf="error.length !== 0" class="error">
-        <p>Error Name: {{error.name}}</p>
-        <p>Error Status: {{error.status}}</p>
-        <p>Error Text: {{error.statusText}}</p>
-    </div>
+    <app-dilbox (close)="onClose($event)" *ngIf="show"></app-dilbox>
+    <app-dilbox (close)="onClose($event)" [error]="error" *ngIf="error?.length !== 0"></app-dilbox>
 </div>

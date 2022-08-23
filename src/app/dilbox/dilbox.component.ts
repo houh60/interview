@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { JsonPipe } from '@angular/common';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Aircraft } from '../aircraft.model';
 
 @Component({
     selector: 'app-dilbox',
@@ -8,14 +10,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DilboxComponent implements OnInit {
 
-    constructor(
-        private route: ActivatedRoute
-    ) {}
+    show = true;
+    aircraft?: Aircraft;
+    @Output() close = new EventEmitter<boolean>();
+    @Input() error: any;
+
+    constructor(private route: ActivatedRoute) {}
 
     ngOnInit(): void {
-        this.route.params.subscribe(param => {
-            console.log('param: ', param);
+        this.route.queryParams.subscribe(param => {
+            this.aircraft = param as Aircraft;
         })
+    }
+
+    onClose() {
+        this.show = false;
+        this.close.emit(this.show);
     }
 
 }
