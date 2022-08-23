@@ -14,5 +14,5 @@
         </div>
     </div>
     <app-dilbox (close)="onClose($event)" *ngIf="show"></app-dilbox>
-    <app-dilbox (close)="onClose($event)" [error]="error" *ngIf="error?.length !== 0"></app-dilbox>
+    <app-dilbox (close)="onClose($event)" [error]="error" *ngIf="error && error.length !== 0"></app-dilbox>
 </div>
