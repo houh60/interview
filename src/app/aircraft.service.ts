@@ -12,7 +12,6 @@ export class AircraftService {
     url: string = './assets/aircraftslist.json';
     constructor(private http: HttpClient) {}
 
-
     getAircrafts() {
         return this.http.get<Aircraft[]>(this.url);
     }

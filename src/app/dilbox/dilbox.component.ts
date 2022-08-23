@@ -27,5 +27,4 @@ export class DilboxComponent implements OnInit {
         this.show = false;
         this.close.emit(this.show);
     }
-
 }
