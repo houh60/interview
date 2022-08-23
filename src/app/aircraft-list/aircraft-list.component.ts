@@ -37,7 +37,7 @@ export class AircraftListComponent implements OnInit {
         this.router.navigate(['/dilbox'], { queryParams: aircraft });
     }
 
-    onClose(event: any) {
+    onClose(event: boolean) {
         this.show = event;
     }
 }
