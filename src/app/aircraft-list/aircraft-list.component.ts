@@ -11,7 +11,7 @@ import { AircraftService } from '../aircraft.service';
 export class AircraftListComponent implements OnInit {
 
     airCrafts: Aircraft[] = [];
-    error: any = '';
+    error: any;
     show = false;
 
     constructor(
