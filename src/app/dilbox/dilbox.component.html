@@ -5,7 +5,7 @@
         <p><span class="name">Registration:</span> {{aircraft?.registration}}</p>
         <p><span class="name">Fleet Type:</span> {{aircraft?.fleet_type}}</p>
     </div>
-    <div *ngIf="error && error.length !== 0" class="error">
+    <div *ngIf="error" class="error">
         <p><span class="name">Error Name:</span> {{error.name}}</p>
         <p><span class="name">Error Status:</span> {{error.status}}</p>
         <p><span class="name">Error Text:</span> {{error.statusText}}</p>
