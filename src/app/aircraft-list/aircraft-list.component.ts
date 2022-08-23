@@ -26,7 +26,6 @@ export class AircraftListComponent implements OnInit {
                     this.airCrafts = aCrafts
                 },
                 error: err => {
-                    console.log('err: ', err);
                     this.show = true;
                     this.error = err;
                 }
