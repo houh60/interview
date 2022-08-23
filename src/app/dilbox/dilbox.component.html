@@ -11,6 +11,6 @@
         <p>Error Text: {{error.statusText}}</p>
     </div>
     <div class="alert-box-actions">
-        <button class="btn btn-primary" (click)="onClose()">Close</button>
+        <button class="btn" [ngClass]="error ? 'btn-danger' : 'btn-primary'" (click)="onClose()">Close</button>
     </div>
 </div>
