@@ -27,6 +27,7 @@ export class AircraftListComponent implements OnInit {
                 },
                 error: err => {
                     console.log('err: ', err);
+                    this.show = true;
                     this.error = err;
                 }
             });
