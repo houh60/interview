@@ -20,16 +20,15 @@ export class AircraftListComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        this.aircraftService.getAircrafts()
-            .subscribe({
-                next: aCrafts => {
-                    this.airCrafts = aCrafts
-                },
-                error: err => {
-                    this.show = true;
-                    this.error = err;
-                }
-            });
+        this.aircraftService.getAircrafts().subscribe({
+            next: aCrafts => {
+                this.airCrafts = aCrafts
+            },
+            error: err => {
+                this.show = true;
+                this.error = err;
+            }
+        });
     }
 
     onClick(aircraft: Aircraft) {

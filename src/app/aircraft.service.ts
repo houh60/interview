@@ -7,9 +7,8 @@ import { Aircraft } from './aircraft.model';
 })
 export class AircraftService {
 
-    airCrafts?: Aircraft[];
-
     url: string = './assets/aircraftslist.json';
+
     constructor(private http: HttpClient) {}
 
     getAircrafts() {
