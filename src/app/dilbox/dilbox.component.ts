@@ -1,4 +1,3 @@
-import { JsonPipe } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Aircraft } from '../aircraft.model';
